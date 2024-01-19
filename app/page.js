@@ -1,5 +1,8 @@
 'use client'
+import Link from "next/link"
+import {useRouter} from 'next/navigation'
 export default function Home() {
+  const router = useRouter();
   const lmoa = (item)=>
   {
 alert(item)
@@ -13,6 +16,11 @@ alert(item)
         Home Page
       </h1>
       <button onClick={()=>lmoa("lmoa")}>Nigga click me </button>
+      <Link href="/Login"> GO TO LOGIN PAGE NIGGA</Link>
+      <button  onClick={()=>router.push("/Login")}>Go to login page using button</button>
+
+      <br/>
+      <Link href="/productList">Go to product list</Link>
     </main>
   )
 }
