@@ -17,3 +17,11 @@ export default function StudentList()
         </div>
     )
 }
+
+export function generateMetadata()
+{
+    return {
+        title:"user page title",
+        description:"User page description"
+    }
+}
