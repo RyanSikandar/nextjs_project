@@ -9,7 +9,7 @@ export function GET(request, content) {
     (item) => item.name == content.params.clientname
   );
   return NextResponse.json(
-    userData.length == 0 ? { result: "No Data found" } : userData,
-    { status: 200 }
+    userData.length == 0 ? { result: "No Data found" } : {result: userData},
+    {status: 200} 
   );
 }
