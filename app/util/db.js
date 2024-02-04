@@ -3,12 +3,12 @@ export const user =[{
     age: 28,
     email:"ryansikandar@gmail.com"
 },{
-    name:"john ",
+    name:"john",
     age:35,
     email:"john@gmail.com"
 },
 {
-    name:"Ahmed ",
+    name:"Ahmed",
     age:35,
     email:"ahmed@gmail.com"
 }]

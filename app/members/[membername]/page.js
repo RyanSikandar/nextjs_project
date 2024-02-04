@@ -7,10 +7,17 @@ async function getUser(props) {
 export default async function Page({ params }) {
   console.log(params.membername);
   let user = await getUser(params.membername);
+  user=user[0];
   console.log(user);
   return (
     <h2>
-      User Details: <h2>{user.name} {user.email}</h2>
+      User Details:{" "}
+      <h2>
+      <br/>
+      <br/>
+        User Name: {user.name} <br/>
+        User Email: {user.email}
+      </h2>
     </h2>
   );
 }

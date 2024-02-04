@@ -15,6 +15,7 @@ export default async function Page() {
       {users.map((item) => (
         <div>
           <Link href={`members/${item.name}`}>{item.name}</Link>
+          <span className="ml-2"><Link href={`members/${item.name}/update`}>Edit</Link></span>
         </div>
       ))}
     </div>
