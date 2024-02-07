@@ -1,4 +1,5 @@
 import Link from "next/link";
+import DeleteUser from "../util/delete_button"
 
 async function getUsers() {
   let data = await fetch("http://localhost:3000/clients");
@@ -16,6 +17,7 @@ export default async function Page() {
         <div>
           <Link href={`members/${item.name}`}>{item.name}</Link>
           <span className="ml-2"><Link href={`members/${item.name}/update`}>Edit</Link></span>
+          <span className="ml-4"><DeleteUser id={item.name}/></span>
         </div>
       ))}
     </div>

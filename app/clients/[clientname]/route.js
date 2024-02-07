@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { user } from "../../util/db";
 
+
 export function GET(request, content) {
   const data = user;
   const userData = data.filter(
@@ -29,4 +30,17 @@ export async function PUT(req, content) {
       { result: payload, success: true },
       { status: 200 }
     );
+}
+
+export function DELETE(req,content)
+{
+  let id  = content.params.clientname;
+  console.log(id);
+  if(id){
+    return NextResponse.json({result:"User Deleted",success:true},{status:200});
+  }
+  else
+  {
+  return NextResponse.json({result:"Invalid Information",success:false},{status:400});
+  }
 }
