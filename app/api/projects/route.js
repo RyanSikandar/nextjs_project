@@ -9,6 +9,7 @@ export async function GET() {
         await mongoose.connect(connection);
         console.log('Connected to MongoDB');
         data = await Products.find();
+        console.log(data)
     } catch (error) {
         console.error('Error connecting to MongoDB:', error);
         data = { success: false, error: error.message };
