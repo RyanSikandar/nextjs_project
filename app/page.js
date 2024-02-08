@@ -12,7 +12,7 @@ alert(item)
     <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-white text-black text-2xl">
       <User name="Ryan"/>
 
-      <User name="Sammy"/>
+      <Link href="/addStudent">Click to add a student</Link>
       <h1 >
         Home Page
       </h1>
