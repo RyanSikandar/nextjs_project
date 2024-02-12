@@ -10,7 +10,7 @@ export async function GET() {
         console.log('Connected to MongoDB');
         data = await Products.find();
     } catch (error) {
-        console.error('Error connecting to MongoDB:', error);
+        console.error('Error:', error);
         data = { success: false, error: error.message };
     }
     return NextResponse.json({ result: data });

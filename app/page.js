@@ -11,7 +11,7 @@ alert(item)
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-white text-black text-2xl">
       <User name="Ryan"/>
-
+      <Link href="/studentList">Click to see students</Link>
       <Link href="/addStudent">Click to add a student</Link>
       <h1 >
         Home Page
