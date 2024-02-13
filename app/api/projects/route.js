@@ -5,9 +5,9 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
     let data = []
-    try {
-        await mongoose.connect(connection);
-        console.log('Connected to MongoDB');
+    try { 
+        await mongoose.connect(connection) 
+        console.log("GET API")
         data = await Products.find();
     } catch (error) {
         console.error('Error:', error);
@@ -17,7 +17,8 @@ export async function GET() {
 }
 
 export async function POST(request){
-    await mongoose.connect(connection);
+    await mongoose.connect(connection) 
+    console.log("POST API")
     const payload = await request.json();
     let product = new Products(payload);
 

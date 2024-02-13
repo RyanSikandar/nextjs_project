@@ -1,5 +1,7 @@
 'use client'
 import Link from "next/link"
+import { connection } from "@/app/lib/database";
+import mongoose from "mongoose";
 import {useRouter} from 'next/navigation'
 export default function Home() {
   
@@ -26,7 +28,9 @@ alert(item)
   )
 }
 
-const User = (props) =>{
+
+
+const User = (props) =>{ 
   return (
     <div>
       <p>Hello, user! {props.name}</p>
