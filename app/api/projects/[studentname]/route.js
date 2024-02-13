@@ -12,3 +12,11 @@ console.log("Connection");
 const result = await Products.findOneAndUpdate(filter,payload)
 return NextResponse.json({result:"lmao",success:true})
 }
+
+export async function GET(request,content){
+    let record = {_id:content.params.studentname}
+    await mongoose.connect(connection);
+    console.log("Connection");
+    const result = await Products.findById(record)
+    return NextResponse.json({result:result,success:true})
+    }
