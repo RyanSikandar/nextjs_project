@@ -7,13 +7,12 @@ export async function GET() {
     let data = []
     try { 
         await mongoose.connect(connection) 
-        console.log("GET API")
         data = await Products.find();
     } catch (error) {
         console.error('Error:', error);
         data = { success: false, error: error.message };
     }
-    return NextResponse.json({ result: data });
+    return NextResponse.json({ result: data,success:true});
 }
 
 export async function POST(request){

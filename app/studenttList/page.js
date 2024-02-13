@@ -1,9 +1,17 @@
 "use client"
-const getstudents=async()=>{
-
-let data = await fetch("")
+const getstudents = async () => {
+    let data = await fetch("http://localhost:3000/api/projects");
+    data = await data.json();
+    if (data.success) {
+        return data.result;
+    }
+    else {
+        return { success: false }
+    }
 }
-export default function page() {
+export default async function page() {
+    const students = await getstudents();
+    console.log(students);
     return (
         <>
             <style jsx>{`
@@ -27,7 +35,17 @@ export default function page() {
                             <th>Class</th>
                         </tr>
                     </thead>
-                
+                    <tbody>
+                        {
+                            students.map((items) => (
+                                <tr>
+                                    <td>{items.name}</td>
+                                    <td>{items.class}</td>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+
                 </table>
             </div>
         </>

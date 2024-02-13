@@ -32,15 +32,13 @@ export async function PUT(req, content) {
     );
 }
 
-export function DELETE(req,content)
-{
-  let id  = content.params.clientname;
+export function DELETE(req, content) {
+  let id = content.params.clientname;
   console.log(id);
-  if(id){
-    return NextResponse.json({result:"User Deleted",success:true},{status:200});
+  if (id) {
+    return NextResponse.json({ result: "User Deleted", success: true }, { status: 200 });
   }
-  else
-  {
-  return NextResponse.json({result:"Invalid Information",success:false},{status:400});
+  else {
+    return NextResponse.json({ result: "Invalid Information", success: false }, { status: 400 });
   }
 }
