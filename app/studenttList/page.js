@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link"
 const getstudents = async () => {
     let data = await fetch("http://localhost:3000/api/projects");
     data = await data.json();
@@ -41,6 +42,7 @@ export default async function page() {
                                 <tr>
                                     <td>{items.name}</td>
                                     <td>{items.class}</td>
+                                    <td><Link href={"studenttList/" + items._id}> Edit </Link></td>
                                 </tr>
                             ))
                         }
